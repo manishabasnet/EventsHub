@@ -1,0 +1,24 @@
+.events-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    margin-top: 15%;
+    height: 100vh;
+}
+
+.event{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5vh;
+    width: 70vw;
+    border: 2px solid #31458f; 
+    border-radius: 10px;
+}
+
+.event p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

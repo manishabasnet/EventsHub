@@ -1,0 +1,32 @@
+.interaction-detail{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(184, 209, 221);
+    border-radius: 0px 0px 10px 10px;
+    height: 6vh;
+}
+
+.upvotes{
+    margin: 0 10%;
+}
+
+.upvote-count{
+    margin-top: -1.0vh;
+}
+
+.heart-button {
+    background-color: transparent; 
+    border: none; 
+    padding: 0; 
+    cursor: pointer;
+    outline: none;
+}
+
+.heart-button.liked {
+    color: rgb(169, 44, 44);
+}
+
+
+.comment{
+    color: rgb(83, 83, 124);
+}
