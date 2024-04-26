@@ -4,7 +4,6 @@
     align-items: center;
     width: 100vw;
     margin-top: 15%;
-    height: 100vh;
 }
 
 .event{
@@ -21,4 +20,21 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+.filter-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    top: 10%;
+    background-color: white; 
+    padding: 1rem 0; 
+}
+
+.filters{
+    margin: 0px 3px;
 }
