@@ -25,6 +25,10 @@ const EventGallery = () => {
         fetchEvents();
     }, [])
 
+    const handleClick = (id) => {
+        window.location = `/edit-delete-event/${id}`;
+    };
+
     return (
         <>
         <div className={EventGalleryCSS["events-container"]}> 
@@ -35,9 +39,11 @@ const EventGallery = () => {
             <div className={EventGalleryCSS["all-events"]} key={event.id}>
 
                 <div className={EventGalleryCSS["event"]}>
+                    <div className="event-detail" onClick={() => handleClick(event.id)}>
                         <p><b>{event.eventTitle}</b></p>
                         <p>{event.eventContent}</p>
-                        <InteractionDetail upvotes={event.upvotes} eventID={event.id}/>
+                    </div>
+                    <InteractionDetail upvotes={event.upvotes} eventID={event.id}/>
                 </div>
             </div>
         ): <h2>{'No events found yet 😞'}</h2>
