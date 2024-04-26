@@ -40,8 +40,13 @@ input[type="text"] {
     flex-direction: row;
 }
 
-.home-create p{
-    margin-right: 18%;
+.home-button, .create-event-button {
+    background-color: transparent; 
+    border: none; 
+    padding: 0; 
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
 }
 
 

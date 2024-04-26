@@ -1,7 +1,9 @@
 import React from "react";
 import HeaderModuleCSS from './HeaderModule.module.css';
+import {Link} from "react-router-dom";
 
 const Header = () => {
+
     return (
         <>
             <header>
@@ -11,8 +13,8 @@ const Header = () => {
                     <span className={HeaderModuleCSS["search-icon"]}>🔍</span>
                 </div>
                 <div className={HeaderModuleCSS["home-create"]}>
-                    <p><b>Home</b></p>
-                    <p><b>CreateEvent</b></p>
+                    <Link to= {"/"}><button className={HeaderModuleCSS["home-button"]}>Home</button></Link>
+                    <Link to= {"/create-event"}><button className={HeaderModuleCSS["create-event-button"]}>CreateEvent</button></Link>
                 </div>
             </header>
         </>
