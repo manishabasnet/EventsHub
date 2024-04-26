@@ -9,6 +9,7 @@ const EventGallery = () => {
 
     const [events, setEvents] = useState([]);
     const [originalEvents, setOriginalEvents] = useState([]);
+    const [searchKeywork, setSearchKeyword] = useState("");
 
     useEffect (() => {
         const fetchEvents = async () => {
@@ -61,15 +62,35 @@ const EventGallery = () => {
         setEvents(oldestFirst);
         return oldestFirst;
     };
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        const keyword = e.target.elements.search.value.toLowerCase();
+        setSearchKeyword(keyword);
+        const filtered = originalEvents.filter((event) => event.eventTitle.toLowerCase().includes(keyword));
+        setEvents(filtered);
+    };
     
 
     return (
         <>
         <div className={EventGalleryCSS["filter-container"]}>
-            <Filters feature="All" onClick={filterAll}/>
-            <Filters feature="Most Popular" onClick={() => { filterMostPopular(); updateEvents(); }}/>
-            <Filters feature="Oldest" onClick={() => { filterOldest(); updateEvents(); }} />
+            <div className={EventGalleryCSS["filters"]}>
+                <Filters feature="All" onClick={filterAll}/>
+                <Filters feature="Most Popular" onClick={() => { filterMostPopular(); updateEvents(); }}/>
+                <Filters feature="Oldest" onClick={() => { filterOldest(); updateEvents(); }} />
+            </div>
+             
+            <div className={EventGalleryCSS["search-form"]}>
+                <form onSubmit={handleSearch}>
+                    <div className={EventGalleryCSS["search-bar"]}>
+                        <input type="text" name="search" placeholder="search......." className={EventGalleryCSS["search-input"]}></input>
+                    </div>    
+                </form>
+            </div>
+
         </div>
+
         <div className={EventGalleryCSS["events-container"]}> 
         {
             events && events.length > 0 ?

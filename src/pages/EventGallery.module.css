@@ -24,7 +24,7 @@
 
 .filter-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -36,5 +36,28 @@
 }
 
 .filters{
-    margin: 0px 3px;
+    display: flex;
+    flex-direction: row;
+}
+
+.search-bar{
+    margin-top: 1vh;
+    position: relative;
+    display: flex;
+    width: 30%;
+}
+
+.search-form{
+    margin-top: 1vh;
+    display: flex;
+}
+
+input[type="text"] {
+    border-radius: 7px; 
+    padding: 1% 1%;
+    background-color: rgb(166, 197, 224);
+    flex-grow: 1;
+    color: black;
+    height: 3vh;
+    padding: .1rem;
 }

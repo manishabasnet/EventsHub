@@ -12,29 +12,6 @@ header{
     color: rgb(226, 231, 235);
 }
 
-.search-bar {
-    position: relative;
-    display: flex;
-    width: 20%;
-}
-
-.search-icon {
-    position: absolute;
-    right: 2%;
-    top: 60%;
-    transform: translateY(-50%);
-    cursor: pointer; 
-}
-
-input[type="text"] {
-    border: none;
-    border-radius: 7px; 
-    padding: 1% 1%;
-    background-color: aliceblue;
-    flex-grow: 1;
-    color: black;
-}
-
 .home-create{
     display: flex;
     flex-direction: row;

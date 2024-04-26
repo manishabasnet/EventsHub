@@ -6,10 +6,11 @@ import CreateEvent from './pages/CreateEvent';
 import EditDeletePost from "./pages/EditDeletePost";
 
 function App() {
+  
 
   return (
     <>
-    <Header/>
+      <Header/>
 
     <Routes>
       <Route path="/" element={<EventGallery/>}/>
