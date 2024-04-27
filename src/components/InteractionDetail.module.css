@@ -1,25 +1,50 @@
 .interaction-detail{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     background-color: rgb(184, 209, 221);
     border-radius: 0px 0px 10px 10px;
     height: 6vh;
 }
 
+.interactions{
+    display: flex;
+    flex-direction: row;
+    margin-left: 2vw;
+}
+
 .upvotes{
-    margin: 0 10%;
+    margin-right:3vw;
 }
 
 .upvote-count{
     margin-top: -1.0vh;
 }
 
-.heart-button {
+.heart-button{
     background-color: transparent; 
     border: none; 
     padding: 0; 
     cursor: pointer;
     outline: none;
+}
+
+.comment-button{
+    background-color: transparent; 
+    color: rgb(83, 83, 124);
+    border: none; 
+    padding: 0; 
+    cursor: pointer;
+    outline: none;
+}
+.edit-delete button{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    color: rgb(83, 83, 124);
+    margin-right: 1vw;
 }
 
 .heart-button.liked {

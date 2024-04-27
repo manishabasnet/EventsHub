@@ -1,0 +1,18 @@
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center vertically */
+    height: 100vh; /* Set height to fill the viewport */
+}
+
+.event {
+    width: 80%; /* Adjust width as needed */
+    margin-bottom: 20px; /* Add some space between event details and comments */
+    text-align: center; /* Center the content */
+}
+
+.comments {
+    width: 80%; /* Adjust width as needed */
+    text-align: center; /* Center the content */
+}

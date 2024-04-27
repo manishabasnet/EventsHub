@@ -29,7 +29,7 @@ const EventGallery = () => {
         fetchEvents();
     }, [])
 
-    const handleClick = (id) => {
+    const handleEdit = (id) => {
         window.location = `/edit-delete-event/${id}`;
     };
 
@@ -70,6 +70,10 @@ const EventGallery = () => {
         const filtered = originalEvents.filter((event) => event.eventTitle.toLowerCase().includes(keyword));
         setEvents(filtered);
     };
+
+    const showDetails = (id) => {
+        window.location = `/event-detail/${id}`;
+    };
     
 
     return (
@@ -99,11 +103,11 @@ const EventGallery = () => {
             <div className={EventGalleryCSS["all-events"]} key={event.id}>
 
                 <div className={EventGalleryCSS["event"]}>
-                    <div className="event-detail" onClick={() => handleClick(event.id)}>
+                    <div className="event-detail" onClick={() => showDetails(event.id)}>
                         <p><b>{event.eventTitle}</b></p>
                         <p>{event.eventContent}</p>
                     </div>
-                    <InteractionDetail upvotes={event.upvotes} eventID={event.id}/>
+                    <InteractionDetail upvotes={event.upvotes} eventid={event.id} onClick={() => handleEdit(event.id)}/>
                 </div>
             </div>
         ): <h2>{'No events found yet 😞'}</h2>

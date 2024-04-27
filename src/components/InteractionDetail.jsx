@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faComment } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faComment, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import InteractionDetailCSS from "./InteractionDetail.module.css";
 import { supabase } from '../SupabaseConnection';
 import {useState} from "react";
@@ -9,12 +9,12 @@ const InteractionDetail = (props) => {
     const [likes, setLikes] = useState(props.upvotes);
     const [liked, setLiked] = useState(false);
 
-    const handleClick = async () => {
+    const handleLikes = async () => {
         try {
             const { data, error } = await supabase
                 .from("Events")
                 .update({ upvotes: likes + 1 }) 
-                .eq('id', props.eventID)
+                .eq('id', props.eventid)
                 .single();
 
             if (error) {
@@ -28,19 +28,31 @@ const InteractionDetail = (props) => {
         }
     };
 
+    const handleComments = () => {
+        window.location = `/event-detail/${props.eventid}`;
+    };
+
     return (
         <>
         <div className={InteractionDetailCSS["interaction-detail"]}>
+            <div className={InteractionDetailCSS["interactions"]}>
             <div className={InteractionDetailCSS["upvotes"]}>
-                <button className={`${InteractionDetailCSS["heart-button"]} ${liked ? InteractionDetailCSS["liked"] : ''}`} onClick={handleClick}>
+                <button className={`${InteractionDetailCSS["heart-button"]} ${liked ? InteractionDetailCSS["liked"] : ''}`} onClick={handleLikes}>
                     <FontAwesomeIcon icon={faHeart} />
                 </button>
                 <div className={InteractionDetailCSS["upvote-count"]}>{likes}</div>
             </div>
             <div className={InteractionDetailCSS["comment"]}>
-                <FontAwesomeIcon icon={faComment} />
-                <div className={InteractionDetailCSS["upvote-count"]}>{props.comments}</div>
-                </div>
+                <button className={`${InteractionDetailCSS["comment-button"]} ${liked ? InteractionDetailCSS["liked"] : ''}`} onClick={handleComments}>
+                    <FontAwesomeIcon icon={faComment} />
+                </button> 
+            </div>
+            </div>
+            <div className={InteractionDetailCSS["edit"]}>
+            <div className={InteractionDetailCSS["edit-delete"]}>
+                <button onClick={props.onClick}><FontAwesomeIcon icon={faPenToSquare} /></button>
+            </div>
+            </div>
         </div>
         </>
     )

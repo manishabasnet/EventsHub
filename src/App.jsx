@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import EventGallery from './pages/EventGallery';
 import CreateEvent from './pages/CreateEvent';
 import EditDeletePost from "./pages/EditDeletePost";
+import PostDetail from "./pages/PostDetail";
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
       <Route path="/" element={<EventGallery/>}/>
       <Route path="/create-event" element={<CreateEvent/>}/>
       <Route path="/edit-delete-event/:id" element={<EditDeletePost/>}/>
+      <Route path="event-detail/:id" element={<PostDetail/>}/>
     </Routes>
 
     </>
