@@ -1,12 +1,22 @@
-.details {
+.container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: center; /* Center vertically */
-    height: 100vh; /* Set height to fill the viewport */
+    width: 100vw;
+    height: 100vh;
+}
+
+.details {
+    width: 100%;
+    max-width: 800px; /* Optional: Adjust the maximum width as needed */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .event {
+    background-color: antiquewhite;
+    border: 2px solid black;
+    border-radius: 10px;
     width: 80%; /* Adjust width as needed */
     margin-bottom: 20px; /* Add some space between event details and comments */
     text-align: center; /* Center the content */
@@ -16,3 +26,9 @@
     width: 80%; /* Adjust width as needed */
     text-align: center; /* Center the content */
 }
+
+.comments{
+    display: flex;
+    flex-direction: column;
+}
+

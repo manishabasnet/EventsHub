@@ -62,7 +62,7 @@ const PostDetail = () => {
         <div className={PostDetailCSS.details}>
             {eventDetails && eventDetails.eventTitle && (
                 <>
-                    <div className={PostDetailCSS.event}>
+                    <div className={PostDetailCSS["event"]}>
                         <div className={PostDetailCSS["event-title-description"]}>
                             <p><b>{eventDetails.eventTitle}</b></p>
                             <p>{eventDetails.eventContent}</p>
@@ -79,15 +79,17 @@ const PostDetail = () => {
                                     onChange={(e) => setCommentInput(e.target.value)}
                                     placeholder="Add a comment..."
                                 />
-                                <button type="submit">Submit</button>
                             </form>
                         </div>
 
-                        {eventDetails.comments && eventDetails.comments.map(comment => (
-                            <div key={comment.id}>
-                                <p>{comment.comment}</p>
-                            </div>
-                        ))}
+                        <div className={PostDetailCSS["comments"]}>
+                            {eventDetails.comments && eventDetails.comments.map(comment => (
+                                <div key={comment.id}>
+                                    <p>{comment.comment}</p>
+                                </div>
+                            ))}
+                        </div>
+                        
                     </div>
                 </>
             )}

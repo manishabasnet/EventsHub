@@ -61,3 +61,11 @@ input[type="text"] {
     height: 3vh;
     padding: .1rem;
 }
+
+.post-comment{
+    background-color: transparent; 
+    border: none; 
+    padding: 0; 
+    cursor: pointer;
+    outline: none;
+}
